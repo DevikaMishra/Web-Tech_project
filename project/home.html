@@ -8,12 +8,14 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #99d9e8;
 }
+
 
 li {
     float: left;
-    border-right:1px solid #bbb;
+    border-right:1px solid #000;
+	
 }
 
 li:last-child {
@@ -22,40 +24,89 @@ li:last-child {
 
 li a {
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
+h1{
+    color:white;
+}
+
 li a:hover:not(.active) {
-    background-color: #111;
+    background-color: white;
 }
 
 .active {
     background-color: Blue
     ;
 }
+body {
+    min-height:100%;
+    background-color: #263238;
+	color:white;
+}
 </style>
+
+	<script type="text/javascript">
+		var xhr=new XMLHttpRequest();
+		function init(){
+			xhr.onreadystatechange=showContent;
+			xhr.open("GET","text.txt",true);
+			xhr.send();
+		}
+		
+		function showContent(){
+			if(xhr.readyState==4 && xhr.status==200){
+				var res=xhr.responseText;
+				var resArr=res.split(";");
+				document.getElementById("textDiv").innerHTML=resArr[0];
+				document.getElementById("picture").innerHTML=resArr[1];
+				setTimeout(getPic,2000);
+			}
+		}
+		
+		function getPic(){
+			this.xhr.onreadystatechange=this.showPic;
+			this.xhr.open("GET","img.txt",true);
+			this.xhr.send();
+		}
+		
+		function showPic(){
+			if(xhr.readyState==4 && xhr.status==200){
+				var res=this.responseText;
+				document.getElementById("picture").innerHTML=res;
+			}
+		}	
+		
+	</script>	
 </head>
-<body>
+<body onload="init()">
 <div class="container" ng-app="myApp">
   <div class="row">
     <div class="col-md-12">
       <div class="page-header">
-        <h1>Welcome to University Question Paper Generator</h1>
+        <center><h1>Welcome to University Question Paper Generator 
+		<div style="float:right" id="picture">Logo</div></h1></center>
+			
       </div>
+	  
     </div>
+	<br/></br></br>
     
     <div ui-view></div>
     
   </div>
-<ul>
+<ul class="header">
   <li><a class="active" href="#home">Home</a></li>
-  <li><a href="C://Users//Devika//Desktop//project//Student_register//index.html">Student Registration</a></li>
-  <li><a href="C://Users//Devika//Desktop//project//Teacher-register//index.html">Faculty Registration</a></li>
-  <li style="float:right"><a href="C://Users//Devika//Desktop//project//login-page//index.html">Login</a></li>
+  <li><a href="../project/Student_register/index.html">Student Registration</a></li>
+  <li><a href="../project/Teacher-register/index.html">Faculty Registration</a></li>
+  <li style="float:right"><a href="../project/login-page/index.html">Login</a></li>
 </ul>
-
+<br/>
+<div id="textDiv">
+				Text to be replaced
+			</div>
 </body>
 </html>

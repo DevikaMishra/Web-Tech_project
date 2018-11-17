@@ -1,0 +1,12 @@
+Texts with potential educational value are becoming available through the Internet (e.g., Wikipedia, news services). However, using these new texts in classrooms introduces many challenges, one of 
+which is that they usually lack practice exercises and assessments. Here, we address part of this challenge
+by automating the creation of a specific type of assessment item.
+Specifically, we focus on automatically generating factual What questions and Fill in the Blanks. 
+This is an automated system that can take as input a text and produce as output questions for assessing a
+reader's knowledge of the information in the text. The questions could then be presented to a teacher,
+who could select and revise the ones that he or she judges to be useful.
+
+
+It is a unique solution that provides teachers to conduct tests or exams in your organization or Institute. Generally higher authorities are heavily dependent on typists when there is a question of preparing test papers. It happens even when the organizatio has a pool of good questions already typed. Over this pool of questions typists and teachers are engaged for hours in the cycle of cut-paste-print out-corrections. But, now you have a facility to take decision in seconds for conducting tests in your organization and the test paper is ready in a minute...
+; 
+<img src='loader.gif'  class="loading" alt='loading' height='70px' width=70px'/>
