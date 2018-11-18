@@ -1,6 +1,6 @@
 Data Structures
 Introduction To Data Science
-Digital Design and Computer Organistaion
+Digital Design and Computer Organization
 Web Technologies-1
 Discrete Mathematics and Logic
 Theory of Computation
@@ -17,3 +17,4 @@ Unix System Programming
 Web Technologies-2
 Object Oriented Modelling and Design
 Wireless Systems
+Social Network Analysis
