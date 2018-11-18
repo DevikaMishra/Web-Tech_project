@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		</style>
+		<script>
+		
+			count=0;
+			
+			window.onpopstate=restore;
+			xhr = new XMLHttpRequest();
+			function fetchSubjects()
+			{
+				subject = document.getElementById("food");
+				container = document.getElementById("container");
+	
+				if(subject.value == "")
+				{
+					container.innerHTML = "";
+				}
+		
+				else
+				{
+						xhr.onreadystatechange = showSubjects;
+						xhr.open("GET", "getSubjects.php?pl=" + subject.value, true);
+						xhr.send();
+			
+				}
+		
+			}
+	
+			function showSubjects()
+			{
+				if(xhr.readyState == 4 && xhr.status == 200)
+				{
+					var subjects = JSON.parse(xhr.responseText);
+					container.innerHTML = "";
+					for(var j=0;j < subjects.length; j++)
+					{
+						var newdiv = document.createElement("div");
+						newdiv.innerHTML = subjects[j];
+						container.appendChild(newdiv);
+					}
+				
+				}
+			}
+			
+			function restore(e){
+				
+				var rest=e.state;
+				document.getElementById("food").value=rest.fname;
+				document.getElementById("cuisine").value=rest.cs;
+				
+			
+			
+			}
+			var obj={
+				xhr:new XMLHttpRequest(),
+				getDetails:function()
+				{
+					var fname=document.getElementById("food").value
+					this.xhr.onreadystatechange=this.showDetails;
+					this.xhr.open("GET","d_code.php?fname="+fname,true);
+					this.xhr.send();
+				
+				},
+				
+				showDetails:function()
+				{
+					//wait for response
+					if(this.readyState==4 && this.status==200)
+					{
+						var res=JSON.parse(this.responseText);
+						document.getElementById("cuisine").value=res.cs;
+						
+						var hist=new Object();
+						hist["fname"]=document.getElementById("food").value;
+						hist["cs"]=res.cs;
+				
+						history.pushState(hist,"XHR History","http://localhost/project/faculty-ui/d_code.html?count="+count++);
+						
+						
+					
+					}
+				
+				}
+			
+			
+			
+			
+			}
+		
+		</script>
+	</head>
+	
+	
+	<body>
+	<table border = 0>
+		<label>Subject:              <input type="text" id="food" onkeyup="fetchSubjects()" onblur="obj.getDetails()"/><label></br></br>
+		<tr>
+			<td></td>
+			<td><div id="container"></div></td>
+		</tr>
+	
+		<tr>
+			<td></td>
+		</tr>
+	</table>
+	<label>Subject Code:             <input type="text" id="cuisine" disabled /><label></br></br>
+	<label>Input Text for Generating Questions    </br><p><textarea name="item3" cols="50" rows="10"></textarea></p>
+	</br></br>
+	<p><input type="submit" value="Generate Paper" id="gen_paper"></p>
+
+
+
+
+	</body>
+</html>
