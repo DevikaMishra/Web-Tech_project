@@ -106,14 +106,80 @@ body {
 </ul>
 <br/>
 	<div id="textDiv">
-		<center>
-		<div id="courseCode" style="font-size:160%">Course Code: <span id="CCode">UE15CS</span></div>
-		<div id="courseName" style="font-size:160%">Course Name: <span id="CCode">ABCDE</span></div>
-		</center>
-		<br/><br/><br/>
 		<?php
-			//$content=$_REQUEST['t'];
-			//$myFile=fopen("input.txt","w") or die("Unable to open file!");
+			$fname=$_REQUEST['subject'];
+			
+			if($fname=="Data Structures"){
+				$retarr ="UE15CS202";
+			}
+			elseif($fname=="Introduction to Data Science"){
+				$retarr ="UE15CS201";
+			}
+			elseif($fname=="Digital Design and Computer Organization"){
+				$retarr ="UE15CS203";
+			}
+			elseif($fname=="Web Technologies-1"){
+				$retarr ="UE15CS204";
+			}
+			elseif($fname=="Theory of Computation"){
+				$retarr ="UE15CS255";
+			}
+			elseif($fname=="Linear Algebra"){
+				$retarr ="UE15CS251";
+			}
+			elseif($fname=="Design and Analysis of Algorithms"){
+				$retarr ="UE15CS252";
+			}
+			elseif($fname=="Database Management System"){
+				$retarr ="UE15CS253";
+			}
+			elseif($fname=="Microprocessor and Computer Architecture"){
+				$retarr ="UE15CS254";
+			}
+			elseif($fname=="Computer Networks"){
+				$retarr ="UE15CS301";
+			}
+			elseif($fname=="Operating Systems"){
+				$retarr ="UE15CS302";
+			}
+			elseif($fname=="Principles of Programming Languages"){
+				$retarr ="UE15CS303";
+			}
+			elseif($fname=="Compiler Design"){
+				$retarr ="UE15CS351";
+			}
+			elseif($fname=="Machine Learning"){
+				$retarr ="UE15CS353";
+			}
+			elseif($fname=="Unix System Programming"){
+				$retarr ="UE15CS352";
+			}
+			elseif($fname=="Web Technologies-2"){
+				$retarr ="UE15CS403";
+			}
+			elseif($fname=="Object Oriented Modelling and Design"){
+				$retarr ="UE15CS401";
+			}
+			elseif($fname=="Wireless Systems"){
+				$retarr ="UE15CS420";
+			}
+			elseif($fname=="Social Network Analysis"){
+				$retarr="UE15CS424";
+			}
+			echo "<html><body>";
+			echo "<center>";
+			echo "<div id='courseCode' style='font-size:160%'>Course Code: ";
+			echo $retarr;
+			echo "</div>";
+			echo "<div id='courseName' style='font-size:160%'>Course Name: ";
+			echo $fname;
+			echo "</div>";
+			echo "</center><br/><br/><br/>";
+			
+			$content=$_REQUEST['item3'];
+			$myFile=fopen("input.txt","w") or die("Unable to open file!");
+			fwrite($myFile,$content);
+			fclose($myFile);
 			//fwrite($myfile,$content);
 			$a=file_get_contents("out.txt");
 			$b=explode("$",$a);
@@ -130,7 +196,7 @@ body {
 			$my_str="";
 			$k=1;
 			$p=0;
-			echo "<html><body>";
+			
 			for($i=0;$i<count($b)-1;$i++){
 				echo "<b>Question $k: </b>";
 				echo $b[$i];
@@ -146,7 +212,9 @@ body {
 				$p++;
 			}
 			echo "</body></html>";
-		?>		
+		?>	
+		
+		
 	</div>
 </body>
 </html>
