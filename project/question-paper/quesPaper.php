@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
+<html><head>
  <title>QP Generator</title>
 <style>
 ul {
@@ -180,8 +178,13 @@ body {
 			$myFile=fopen("input.txt","w") or die("Unable to open file!");
 			fwrite($myFile,$content);
 			fclose($myFile);
-			//fwrite($myfile,$content);
-			$a=file_get_contents("out.txt");
+			
+			$cmd=escapeshellcmd('C:/Bhavana/python.exe abcd.py');
+			//$a=shell_exec('C:\\Bhavana\\python.exe abcd.py');
+			$a=shell_exec($cmd);
+			//var_dump(@ini_get("disable_functions"));
+			echo($a);
+			//$a=file_get_contents("out.txt");
 			$b=explode("$",$a);
 			
 			$ans=array();
