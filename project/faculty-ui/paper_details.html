@@ -173,6 +173,17 @@ body {
 	<label>Subject Code:             <input type="text" id="cuisine" disabled /><label></br></br>
 	<label>Input Text for Generating Questions    </br><p><textarea name="item3" cols="50" rows="10"></textarea></p>
 	</br></br>
+	<div class="form-group">
+		<label for="Type">Type of paper:</label>
+		<label for="" class="radio-inline">
+			<input type="radio" name="emp_gender" value="fillin" ng-model="empInfo.type">Fill in the blanks
+		</label>
+		<label for="" class="radio-inline">
+			<input type="radio" name="emp_gender" value="brief" ng-model="empInfo.type">Brief Answer Questions
+		</label>
+	</div>
+	</br>
+	</br>
 	<p><input type="submit" value="Generate Paper" id="gen_paper"></p>
 	</form>
 
