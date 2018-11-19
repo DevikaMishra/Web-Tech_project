@@ -1,1 +1,1 @@
-#Web-Tech-2 Project
+# Automatic_tagging_of_clothing_in_E-Commerce
