@@ -179,12 +179,21 @@ body {
 			fwrite($myFile,$content);
 			fclose($myFile);
 			
-			$cmd=escapeshellcmd('C:/Bhavana/python.exe abcd.py');
-			//$a=shell_exec('C:\\Bhavana\\python.exe abcd.py');
+			$qType=$_REQUEST['emp_gender'];
+			
+			/*
+			//Code if shell exec works
+			if($qType=="fillin"){
+				$cmd=escapeshellcmd('C:/Bhavana/python.exe ../Working/Fill_in_blanks.py');
+			}
+			else{
+				$cmd=escapeshellcmd('C:/Bhavana/python.exe what_question_gen.py');
+			}	
+			
 			$a=shell_exec($cmd);
-			//var_dump(@ini_get("disable_functions"));
 			echo($a);
-			//$a=file_get_contents("out.txt");
+			*/
+			$a=file_get_contents("out.txt");
 			$b=explode("$",$a);
 			
 			$ans=array();
