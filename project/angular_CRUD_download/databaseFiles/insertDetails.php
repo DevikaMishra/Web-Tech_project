@@ -9,7 +9,7 @@ $fname = mysqli_real_escape_string($con, $data->fname);
 $lname = mysqli_real_escape_string($con, $data->lname);
 $email = mysqli_real_escape_string($con, $data->email);
 $branch = mysqli_real_escape_string($con, $data->branch);
-$password = mysqli_real_escape_string($con, $data->password);
+$password = mysqli_real_escape_string($con, $data->pass);
 
 
 // mysqli insert query
@@ -19,3 +19,6 @@ $query = "INSERT INTO teacher(id,Fname,Lname,Branch,password,email) VALUES ('$id
 mysqli_query($con, $query);
 echo true;
 ?>
+
+
+
