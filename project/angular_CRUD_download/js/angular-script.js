@@ -21,7 +21,7 @@ $scope.formToggle =function(){
 $('#empForm').slideToggle();
 }
 $scope.insertInfo = function(info){
-$http.post('databaseFiles/insertDetails.php',{"name":info.name,"email":info.email,"address":info.address,"gender":info.gender}).success(function(data){
+$http.post('databaseFiles/insertDetails.php',{"id":info.id,"fname":info.fname,"lname":info.lname,"branch":info.branch,"email":info.email,"pass":info.pass}).success(function(data){
 if (data == true) {
 getInfo();
 $('#empForm').css('display', 'none');
