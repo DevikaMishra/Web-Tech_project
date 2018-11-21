@@ -12,6 +12,59 @@
 <script src="lib/angular/angular.min.js"></script>
 <!-- Include Bootstrap Javascript -->
 <script src="js/bootstrap.min.js"></script>
+
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #99d9e8;
+}
+
+
+li {
+    float: left;
+    border-right:1px solid #000;
+	
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+h1{
+    color:white;
+}
+
+li a:hover:not(.active) {
+    background-color: white;
+}
+
+.active {
+    background-color: Blue
+    ;
+}
+body {
+    min-height:100%;
+    background-color: #263238;
+	color:white;
+}
+
+th{
+color:black;
+}
+</style>
+
+
 </head>
 <body>
 <div class="container wrapper" ng-controller="DbController">
