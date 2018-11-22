@@ -66,7 +66,7 @@ body {
   </div>
 <ul class="header">
   <li><a class="active" href="../home.html">Home</a></li>
-    <li style="float:right"><a href="../login-page/index.html">Logout</a></li>
+    <li style="float:right"><a href="../login-page/index.php">Logout</a></li>
 </ul>
 <br/>
 	<div id="textDiv">
