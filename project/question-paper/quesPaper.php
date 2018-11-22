@@ -46,40 +46,6 @@ body {
 	color:white;
 }
 </style>
-<!--
-	<script type="text/javascript">
-		var xhr=new XMLHttpRequest();
-		function init(){
-			xhr.onreadystatechange=showContent;
-			xhr.open("GET","text.txt",true);
-			xhr.send();
-		}
-		
-		function showContent(){
-			if(xhr.readyState==4 && xhr.status==200){
-				var res=xhr.responseText;
-				var resArr=res.split(";");
-				document.getElementById("textDiv").innerHTML=resArr[0];
-				document.getElementById("picture").innerHTML=resArr[1];
-				setTimeout(getPic,2000);
-			}
-		}
-		
-		function getPic(){
-			this.xhr.onreadystatechange=this.showPic;
-			this.xhr.open("GET","img.txt",true);
-			this.xhr.send();
-		}
-		
-		function showPic(){
-			if(xhr.readyState==4 && xhr.status==200){
-				var res=this.responseText;
-				document.getElementById("picture").innerHTML=res;
-			}
-		}	
-		
-	</script>	
--->
 </head>
 <body>
 <div class="container" ng-app="myApp">
@@ -181,48 +147,68 @@ body {
 			
 			$qType=$_REQUEST['emp_gender'];
 			
-			/*
+			
 			//Code if shell exec works
 			if($qType=="fillin"){
-				$cmd=escapeshellcmd('C:/Bhavana/python.exe ../Working/Fill_in_blanks.py');
-			}
-			else{
-				$cmd=escapeshellcmd('C:/Bhavana/python.exe what_question_gen.py');
-			}	
+				//$cmd=escapeshellcmd('C:/Bhavana/python.exe ../Working/Fill_in_blanks.py');
+				//$a=shell_exec($cmd);
+				//echo($a);
+				$a=file_get_contents("out1.txt");
+				$b=explode("$",$a);
 			
-			$a=shell_exec($cmd);
-			echo($a);
-			*/
-			$a=file_get_contents("out.txt");
-			$b=explode("$",$a);
+				$ans=array();
+				$unique=array();
+				for($j=0;$j<count($b)-1;$j++){
+					if($j%2!=0){
+						array_push($ans,$b[$j]);
+					}
+				}
+				$unique = array_unique($ans);
+				echo "<br>";
+				$my_str="";
+				$k=1;
+				$p=0;
 			
-			$ans=array();
-			$unique=array();
-			for($j=0;$j<count($b)-1;$j++){
-				if($j%2!=0){
-					array_push($ans,$b[$j]);
+				for($i=0;$i<count($b)-1;$i++){
+					echo "<b>Question $k: </b>";
+					echo $b[$i];
+					echo "<br>";
+					$i++;
+					$k++;
+					echo "<b>Answer&nbsp &nbsp  :  </b>";
+					echo "<input type=text name=$p>";
+					echo "<br>";
+					echo "<br>";
+					$my_str = $my_str.$b[$i];
+					$my_str = $my_str.",";
+					$p++;
 				}
 			}
-			$unique = array_unique($ans);
-			echo "<br>";
-			$my_str="";
-			$k=1;
-			$p=0;
-			
-			for($i=0;$i<count($b)-1;$i++){
-				echo "<b>Question $k: </b>";
-				echo $b[$i];
+			else{
+				//$cmd=escapeshellcmd('C:/Bhavana/python.exe what_question_gen.py');
+				//$a=shell_exec($cmd);
+				//echo($a);
+				$a=file_get_contents("out2.txt");
+				$b=explode("?",$a);
+				//echo $a;
+				$ans=array();			
+				$unique=array();
+				for($j=0;$j<count($b)-1;$j++){
+					array_push($ans,$b[$j]);
+				}
+				//$unique = array_unique($ans);
 				echo "<br>";
-				$i++;
-				$k++;
-				echo "<b>Answer&nbsp &nbsp  :  </b>";
-				echo "<input type=text name=$p>";
-				echo "<br>";
-				echo "<br>";
-				$my_str = $my_str.$b[$i];
-				$my_str = $my_str.",";
-				$p++;
-			}
+				$my_str="";
+				$k=1;
+				$p=0;
+					
+				for($i=0;$i<count($b)-1;$i++){
+					echo "<b>Question $k: </b>";
+					echo $b[$i];
+					echo "<br>";
+					$k++;
+				}
+			}			
 			echo "</body></html>";
 		?>	
 		
