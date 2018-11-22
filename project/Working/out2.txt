@@ -1,0 +1,5 @@
+What is Ajax using?
+What allows Ajax decoupling?
+What is Ajax?
+What is XMLHttpRequest allowing?
+What is Ajax existing?
