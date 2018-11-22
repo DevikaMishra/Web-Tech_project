@@ -1,3 +1,6 @@
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 from textblob import TextBlob
 file1 = open("input.txt","r+")
 ww2 = file1.read()
