@@ -1,0 +1,36 @@
+Ajax short for Asynchronous JavaScript And __________________ is a set of Web development techniques using many Web technologies on the client side to create asynchronous Web applications.
+ $ 
+XML
+ $ 
+By decoupling the data interchange layer from the presentation layer, Ajax allows __________________ pages, and by extension __________________ applications, to change content dynamically without the need to reload the entire page.
+ $ 
+Web
+ $ 
+With Ajax, __________________ applications can send and retrieve data from a server asynchronously in the background without interfering with the display and behavior of the existing page.
+ $ 
+Web
+ $ 
+__________________ and CSS can be used in combination to mark up and style information.
+ $ 
+HTML
+ $ 
+The webpage can then be modified by __________________ to dynamically display – and allow the user to interact with — the new information.
+ $ 
+JavaScript
+ $ 
+In practice, modern implementations commonly utilize __________________ instead of XML due to the advantages of __________________ being native to JavaScript.
+ $ 
+JSON
+ $ 
+__________________ is not a new technology, or different language, just existing technologies used in new ways.
+ $ 
+Ajax
+ $ 
+The built-in __________________ object within JavaScript is commonly used to execute Ajax on webpages allowing websites to load content onto the screen without refreshing the page.
+ $ 
+XMLHttpRequest
+ $ 
+__________________ is not a single technology, but rather a group of technologies.
+ $ 
+Ajax
+ $ 
