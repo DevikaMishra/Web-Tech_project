@@ -1,7 +1,10 @@
+# -*- coding: utf-8 -*-
 from textblob import TextBlob
 import nltk
 from textblob import Word
 import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 
 def parse(string):
@@ -122,7 +125,7 @@ def genQuestion(line):
 
     # Print the genetated questions as output.
     if question != '':
-        print('\n', 'Question: ' + question )
+        print(question )
    
 
 def main():  
@@ -140,11 +143,12 @@ def main():
             verbose = True
 
     # Open the file given as argument in read-only mode.
-    filehandle = open(sys.argv[1], 'r')
+    filehandle = open("input.txt", 'r')
     textinput = filehandle.read()
-    print('\n-----------INPUT TEXT-------------\n')
-    print(textinput,'\n')
-    print('\n-----------INPUT END---------------\n')
+	
+    #print('\n-----------INPUT TEXT-------------\n')
+    #print(textinput,'\n')
+    #print('\n-----------INPUT END---------------\n')
 
     # Send the content of text file as string to function parse()
     parse(textinput)
