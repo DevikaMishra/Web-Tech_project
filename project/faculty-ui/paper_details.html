@@ -49,7 +49,8 @@ body {
 		</style>
 		<script>
 		
-			count=0;			
+			count=0;
+			
 			window.onpopstate=restore;
 			xhr = new XMLHttpRequest();
 			function fetchSubjects()
@@ -138,21 +139,6 @@ body {
 	
 	
 	<body>
-	<div class="container" ng-app="myApp">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="page-header">
-        <center><h1>Welcome "FacultyName" 
-		<div style="float:right" id="picture"><img src="../pesuLOGO.png" height=90 width=100/></div></h1></center>
-			
-      </div>
-	  
-    </div>
-	<br/></br></br>
-    
-    <div ui-view></div>
-    
-  </div>
 	<ul class="header">
   		<li><a class="active" href="../home.html">Home</a></li>
     		<li style="float:right"><a href="../login-page/index.html">Logout</a></li>
